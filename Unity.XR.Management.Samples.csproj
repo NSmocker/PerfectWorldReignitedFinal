@@ -9,7 +9,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{8CE6554C-BFBC-1B0A-82B7-F73D73593E28}</ProjectGuid>
+    <ProjectGuid>{900CD618-6870-9B2A-D644-A810E9E3D41E}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Unity.XR.Management.Samples</AssemblyName>

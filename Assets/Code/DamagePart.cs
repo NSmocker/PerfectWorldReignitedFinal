@@ -6,7 +6,7 @@ public class DamagePart : MonoBehaviour
 {
     public int damage_count;
     public Rigidbody owner_monster;
-    public Rigidbody owner_player;
+ 
 
     public AudioSource source;
     public AudioClip blocksound;
@@ -15,15 +15,15 @@ public class DamagePart : MonoBehaviour
     {
         
     }
-    public void OnCollisionEnter(Collision collision)
+    public void OnTriggerEnter(Collider collision)
     {
         if (collision.gameObject.tag == "DamagePart") 
         {
+            if (owner_monster) { owner_monster.AddForce(-owner_monster.transform.forward * 500f); owner_monster.gameObject.GetComponent<MonsterStats>().HP+=15; }
 
-            if (owner_monster != null) {
-                owner_monster.AddForce(-owner_monster.transform.forward);
                 source.PlayOneShot(blocksound);
-            }
+            print("enemyblocked");
+            
         }
     }
     // Update is called once per frame

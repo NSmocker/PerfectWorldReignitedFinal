@@ -51,6 +51,7 @@ public class Hand_CustomController : MonoBehaviour
             attached = hovered.gameObject;
             attached.GetComponent<Rigidbody>().isKinematic = true;
            
+           
 
         }
     }
@@ -66,6 +67,9 @@ public class Hand_CustomController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+
+
         if (hovered != null) 
         {
             dist = Vector3.Distance(hovered.transform.position, transform.position);

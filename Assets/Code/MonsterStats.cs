@@ -1,19 +1,27 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using System.Timers;
+using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class MonsterStats : MonoBehaviour
 {
     [Header("Default Vars")]
     Rigidbody rb;
     public int level = 1;
-    public int HP = 100;
+    public int HP = 250,Max_HP=250;
     public float move_speed;
     public bool isFighting; //Показатель находится ли моб в состоянии агресии.
     public Animator anim;
     public bool dead;
+    public string monster_name;
 
+    [Header("UI Vars")]
+    public TextMeshProUGUI HP_ui;
+    public TextMeshProUGUI Level_ui;
+    public Image fill_hp;
+    public TextMeshProUGUI MonsterName;
 
     [Header("Sound Vars")]
     public AudioSource source;
@@ -121,12 +129,19 @@ public class MonsterStats : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody>();
+        MonsterName.text = monster_name;
 
     }
 
     // Update is called once per frame
     void Update()
     {
+
+        Level_ui.text = level.ToString();
+        HP_ui.text = HP.ToString();
+        fill_hp.fillAmount = HP / Max_HP;
+        
+
         if (HP > 0)
         {
             if (isFighting)

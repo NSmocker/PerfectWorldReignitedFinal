@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class GrabItemBihaviour : MonoBehaviour
 {
-    public DamagePart d_p;
-    public GameObject player;
+    public DamagePart dam_part;
+   
     // Start is called before the first frame update
     void Start()
     {

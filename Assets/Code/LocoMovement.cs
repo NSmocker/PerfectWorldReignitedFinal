@@ -12,6 +12,8 @@ public class LocoMovement : LocomotionProvider
     private CharacterController characterController = null;
     public CapsuleCollider capsule;
     GameObject head = null;
+    public float gravity = -9;
+    public float Jump_Force=3;
 
     protected override void Awake()
     {
@@ -44,11 +46,18 @@ public class LocoMovement : LocomotionProvider
         capsule.center = newCenter;
         capsule.height= headHeight;
     }
+
+
+    public void Jump() 
+    {
+        gravity = Jump_Force;
+    }
     void ApplyGravity() 
     {
-        Vector3 gravity = new Vector3(0, Physics.gravity.y * gravityMultiplier, 0);
-  
-        characterController.Move(gravity * Time.deltaTime);
+        if (gravity > -10) gravity -= Time.deltaTime;
+        Vector3 gravity_dir = new Vector3(0, gravity * gravityMultiplier, 0);
+        
+        characterController.Move(gravity_dir * Time.deltaTime);
         
     }
     void CheckForInput() 
@@ -57,6 +66,9 @@ public class LocoMovement : LocomotionProvider
         {
             if (controller.enableInputActions) CheckForMovement(controller.inputDevice);
         }
+
+
+
         var default_input = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
         characterController.Move(Camera.main.transform.TransformDirection(new Vector3(default_input.x*speed*Time.deltaTime,0,default_input.y*speed * Time.deltaTime)));
     }

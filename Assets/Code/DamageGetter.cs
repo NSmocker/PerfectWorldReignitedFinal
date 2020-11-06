@@ -9,6 +9,7 @@ public class DamageGetter : MonoBehaviour
     public PlayerStatuses player_parent;
     public bool isPlayer;
 
+
     public List<Transform> damager_parents;
 
 
@@ -40,10 +41,10 @@ public class DamageGetter : MonoBehaviour
         {
             CheckDamagerParent(other.gameObject);
 
-            var block_damage=false;
+            var block_damage=true;
             foreach (var par in damager_parents) 
             {
-                if (par.tag == transform.tag) { block_damage = true;  }
+                if (par.tag == "Player") { block_damage = false;  }
             }
 
             if (block_damage == false)

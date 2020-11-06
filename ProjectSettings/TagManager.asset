@@ -9,6 +9,7 @@ TagManager:
   - DamagePart
   - gesture_point
   - Monster
+  - Weapon
   layers:
   - Default
   - TransparentFX
