@@ -1,0 +1,12 @@
+newmtl StingrayPBSroof
+map_Kd chinesehouse_fbx_final_StingrayPBSroof_BaseColor.png
+bump chinesehouse_fbx_final_StingrayPBSroof_Normal.png
+Kd 0.5 0.5 0.5
+d 1
+
+newmtl StingrayPBSwalls
+map_Kd chinesehouse_fbx_final_StingrayPBSwalls_BaseColor.png
+bump chinesehouse_fbx_final_StingrayPBSwalls_Normal.png
+Kd 0.5 0.5 0.5
+d 1
+
