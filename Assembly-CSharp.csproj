@@ -80,6 +80,7 @@
     <Compile Include="Assets\Code\DamageGetter.cs" />
     <Compile Include="Assets\Code\PlayerStatuses.cs" />
     <Compile Include="Assets\Shared\Ramps\Runtime\RampAsset.cs" />
+    <Compile Include="Assets\HandModelPose.cs" />
   </ItemGroup>
   <ItemGroup>
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
