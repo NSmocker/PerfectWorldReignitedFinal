@@ -10,6 +10,7 @@ TagManager:
   - gesture_point
   - Monster
   - Weapon
+  - RenderCam
   layers:
   - Default
   - TransparentFX

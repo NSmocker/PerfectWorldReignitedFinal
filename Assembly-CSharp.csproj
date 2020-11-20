@@ -64,6 +64,7 @@
     <Compile Include="Assets\Code\ButtonController.cs" />
     <Compile Include="Assets\NPCBihaviour.cs" />
     <Compile Include="Assets\Shared\Scripts\ProximityActivate.cs" />
+    <Compile Include="Assets\HandModelPose.cs" />
     <Compile Include="Assets\Switcher.cs" />
     <Compile Include="Assets\Imported\#NVJOB Simple Water Shaders\Example Scenes\Environment\#NVJOB Assets\Dynamic Sky (For Demo)\DynamicSkyForDemo.cs" />
     <Compile Include="Assets\Shared\Scripts\SimpleCharacterMotor.cs" />
@@ -80,7 +81,8 @@
     <Compile Include="Assets\Code\DamageGetter.cs" />
     <Compile Include="Assets\Code\PlayerStatuses.cs" />
     <Compile Include="Assets\Shared\Ramps\Runtime\RampAsset.cs" />
-    <Compile Include="Assets\HandModelPose.cs" />
+    <Compile Include="Assets\SetCameraInPosition.cs" />
+    <Compile Include="Assets\VRTriggerButton.cs" />
   </ItemGroup>
   <ItemGroup>
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
@@ -803,6 +805,9 @@
     </Reference>
     <Reference Include="Unity.Rider.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.Rider.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Recorder.Base">
+      <HintPath>Library\ScriptAssemblies\Unity.Recorder.Base.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Mathematics">
       <HintPath>Library\ScriptAssemblies\Unity.Mathematics.dll</HintPath>

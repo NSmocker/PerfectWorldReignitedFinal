@@ -16,8 +16,8 @@ MonoBehaviour:
   PromptToUpgradePreviewPackages: 1
   SkipPromptForVersion: 
   StereoRenderingMode: 1
-  InitializationType: 1
+  InitializationType: 2
   EditorAppKey: application.generated.unity.sundewhunter.1412680576.exe
   ActionManifestFileRelativeFilePath: 
-  MirrorView: 3
+  MirrorView: 0
   HasCopiedDefaults: 0
