@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -29,8 +30,10 @@ public class Hand_CustomController : MonoBehaviour
     public void OnTriggerEnter(Collider other)
     {
         if (other.tag == "GrabItem") 
-        {
-            hovered = other.transform.parent.gameObject;
+        {  
+
+            if (other.transform.parent!=null) hovered = other.transform.parent.gameObject;
+            else { hovered = other.transform.gameObject; }
         }
 
 
@@ -58,11 +61,12 @@ public class Hand_CustomController : MonoBehaviour
         if (hovered != null) 
         {
             hovered.transform.position = transform.position;
-            hovered.transform.rotation= transform.rotation;
+        //    hovered.transform.rotation= transform.rotation;
 
-            hovered.transform.parent = transform; 
+            hovered.transform.parent = transform;
+            hovered.GetComponent<Rigidbody>().isKinematic = true;
             attached = hovered.gameObject;
-            attached.GetComponent<Rigidbody>().isKinematic = true;
+
            
            
 
@@ -73,6 +77,7 @@ public class Hand_CustomController : MonoBehaviour
         isGrabed = false;
         if (attached != null)
         { attached.GetComponent<Rigidbody>().isKinematic = false; attached.transform.parent = null; }
+        attached = null;
     }
 
 
@@ -86,6 +91,8 @@ public class Hand_CustomController : MonoBehaviour
             Hand3DModel.SetBool("Grab", isGrabed);
         }
 
+        if (Input.GetButtonDown("Jump")){ GrabItem(); }
+        if (Input.GetButtonUp("Jump")) { Release(); }
 
 
         if (hovered != null) 
