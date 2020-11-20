@@ -8,6 +8,7 @@ public class SetCameraInPosition : MonoBehaviour
     public GameObject pos1, pos2, pos3;
     public Vector3 from_pos, to_pos;
     public Quaternion from_rot, to_rot;
+    public GameObject lookAt;
 
 
     public float Lerper;
@@ -51,11 +52,13 @@ public class SetCameraInPosition : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        transform.LookAt(lookAt.transform);
+
         if (StartLerp == true) 
         {
             Lerper += Time.deltaTime;
             transform.position = Vector3.Lerp(from_pos,to_pos,Lerper);
-            transform.rotation= Quaternion.Lerp(from_rot, to_rot, Lerper);
+          //  transform.rotation= Quaternion.Lerp(from_rot, to_rot, Lerper);
             if (Lerper > 1) StartLerp = false;
         }
 

@@ -21,8 +21,8 @@ public class BodyAttachAvatar : MonoBehaviour
       body_model.transform.position =   transform.position+ body_y_offset ;
 
       var b_rot = transform.eulerAngles;
-      b_rot.x=0;
-      b_rot.z=0;
+      b_rot.x=body_model.transform.eulerAngles.x;
+      b_rot.z=body_model.transform.eulerAngles.z;
       body_model.transform.eulerAngles = b_rot;
 
 
