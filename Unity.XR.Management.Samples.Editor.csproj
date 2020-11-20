@@ -289,9 +289,6 @@
     <Reference Include="VisualDesignCafe.Packages">
       <HintPath>Assets\Imported\Open World Nature\Plugins\com.VisualDesignCafe.PackageManager\VisualDesignCafe.Packages.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.Burst.Unsafe">
-      <HintPath>Library\PackageCache\com.unity.burst@1.2.0-preview.12\Unity.Burst.Unsafe.dll</HintPath>
-    </Reference>
     <Reference Include="nunit.framework">
       <HintPath>Library\PackageCache\com.unity.ext.nunit@1.0.0\net35\unity-custom\nunit.framework.dll</HintPath>
     </Reference>
