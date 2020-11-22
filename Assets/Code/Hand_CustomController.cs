@@ -10,6 +10,7 @@ public class Hand_CustomController : MonoBehaviour
     public GameObject attached;
     public float dist;
     public GameObject My_Player;
+    public float hover_cleaner;
 
 
 
@@ -27,13 +28,14 @@ public class Hand_CustomController : MonoBehaviour
         Hand3DModel = GetComponentInChildren<Animator>();
     }
 
-    public void OnTriggerEnter(Collider other)
+    public void OnTriggerStay(Collider other)
     {
         if (other.tag == "GrabItem") 
-        {  
-
+        {
+            hover_cleaner += 0.5f;
             if (other.transform.parent!=null) hovered = other.transform.parent.gameObject;
             else { hovered = other.transform.gameObject; }
+           
         }
 
 
@@ -48,19 +50,20 @@ public class Hand_CustomController : MonoBehaviour
 
 
     }
-    public void OnTriggerExit(Collider other)
+  /*  public void OnTriggerExit(Collider other)
     {
         if (hovered!=null &&  other.gameObject == hovered)
         {
             hovered = null;
         }
     }
+  */
     public void GrabItem() 
     {
         isGrabed = true;
         if (hovered != null) 
         {
-            hovered.transform.position = transform.position;
+           // hovered.transform.position = transform.position;
         //    hovered.transform.rotation= transform.rotation;
 
             hovered.transform.parent = transform;
@@ -86,6 +89,11 @@ public class Hand_CustomController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        hover_cleaner -= Time.deltaTime;
+        if (hover_cleaner > 0.5f) hover_cleaner = 0.5f;
+        if (hover_cleaner < -0.5) hover_cleaner = -0.5f;
+
+
         if (Hand3DModel != null) 
         {
             Hand3DModel.SetBool("Grab", isGrabed);
@@ -96,9 +104,14 @@ public class Hand_CustomController : MonoBehaviour
 
 
         if (hovered != null) 
-        {
+        {/*
             dist = Vector3.Distance(hovered.transform.position, transform.position);
-            if (dist > 0.2f) hovered = null;
+            if (dist > 0.10f) hovered = null;
+        */
+            if (hover_cleaner <= 0)
+            {
+                hovered = null;
+            }
         }
     }
 }

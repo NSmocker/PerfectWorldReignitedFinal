@@ -79,11 +79,11 @@
     <Compile Include="Assets\DefaultMovement.cs" />
     <Compile Include="Assets\Imported\#NVJOB Simple Water Shaders\Example Scenes\Environment\Scripts\TDControl.cs" />
     <Compile Include="Assets\VRTriggerButton.cs" />
+    <Compile Include="Assets\BodyAttachAvatar.cs" />
     <Compile Include="Assets\Imported\#NVJOB Simple Water Shaders\Example Scenes\Environment\Scripts\Lighthouse.cs" />
     <Compile Include="Assets\Code\DamageGetter.cs" />
     <Compile Include="Assets\Code\PlayerStatuses.cs" />
     <Compile Include="Assets\Shared\Ramps\Runtime\RampAsset.cs" />
-    <Compile Include="Assets\BodyAttachAvatar.cs" />
   </ItemGroup>
   <ItemGroup>
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
